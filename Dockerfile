@@ -6,7 +6,7 @@ RUN apt-get update \
   && apt-get install -y nodejs \
   && npm i -g yarn \
   && curl https://getsubstrate.io -sSf | bash -s -- --fast \
-  && source ~/.cargo/env \
+  && /bin/bash -c "source ~/.cargo/env" \
   && echo "source ~/.cargo/env" >> ~/.profile \
   && f=`mktemp -d` \
   && git clone https://github.com/paritytech/substrate-up $f \
