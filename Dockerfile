@@ -11,5 +11,5 @@ RUN apt-get update \
   && git clone https://github.com/paritytech/substrate-up \
   && cp -a substrate-up/substrate-* ~/.cargo/bin \
   && cp -a substrate-up/polkadot-* ~/.cargo/bin \
-  && substrate-node-new substrate-node-template demo \
-  && substrate-ui-new substrate
+  && /bin/bash -c "substrate-node-new substrate-node-template demo" \
+  && /bin/bash -c "substrate-ui-new substrate"
