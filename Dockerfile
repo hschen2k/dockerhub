@@ -8,8 +8,9 @@ RUN apt-get update \
   && curl https://getsubstrate.io -sSf | bash -s -- --fast \
   && /bin/bash -c "source ~/.cargo/env" \
   && echo "source ~/.cargo/env" >> ~/.profile \
-  && git clone https://github.com/paritytech/substrate-up \
-  && cp -a substrate-up/substrate-* ~/.cargo/bin \
-  && cp -a substrate-up/polkadot-* ~/.cargo/bin \
+  && f=`mktemp -d` \
+  && git clone https://github.com/paritytech/substrate-up $f \
+  && cp -a $f/substrate-* ~/.cargo/bin \
+  && cp -a $f/polkadot-* ~/.cargo/bin \
   && /bin/bash -c "substrate-node-new substrate-node-template demo" \
   && /bin/bash -c "substrate-ui-new substrate"
