@@ -15,5 +15,8 @@ RUN /bin/bash -c "source ~/.cargo/env" \
   && cp -a $f/substrate-* ~/.cargo/bin \
   && cp -a $f/polkadot-* ~/.cargo/bin
 
-RUN /bin/bash -c "~/.cargo/bin/substrate-node-new substrate-node-template demo" \
+#RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
+
+RUN export PATH="$HOME/.cargo/bin:$PATH" \
+  && /bin/bash -c "~/.cargo/bin/substrate-node-new substrate-node-template demo" \
   && /bin/bash -c "~/.cargo/bin/substrate-ui-new substrate"
