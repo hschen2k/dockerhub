@@ -9,6 +9,7 @@ RUN apt-get update \
 
 RUN /bin/bash -c "source ~/.cargo/env" \
   && echo "source ~/.cargo/env" >> ~/.profile \
+  && echo "source ~/.cargo/env" >> ~/.bashrc \
   && f=`mktemp -d` \
   && git clone https://github.com/paritytech/substrate-up $f \
   && cp -a $f/substrate-* ~/.cargo/bin \
