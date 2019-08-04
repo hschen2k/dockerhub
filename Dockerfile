@@ -11,6 +11,6 @@ RUN apt-get update \
   && f=`mktemp -d` \
   && git clone https://github.com/paritytech/substrate-up $f \
   && cp -a $f/substrate-* ~/.cargo/bin \
-  && cp -a $f/polkadot-* ~/.cargo/bin \
-  && /bin/bash -c "substrate-node-new substrate-node-template demo" \
-  && /bin/bash -c "substrate-ui-new substrate"
+  && cp -a $f/polkadot-* ~/.cargo/bin
+  #&& /bin/bash -c "substrate-node-new substrate-node-template demo" \
+  #&& /bin/bash -c "substrate-ui-new substrate"
