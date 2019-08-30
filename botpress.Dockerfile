@@ -7,6 +7,8 @@ RUN apt update && \
 	apt install -y wget ca-certificates && \
 	update-ca-certificates && \
 	wget -O duckling https://s3.amazonaws.com/botpress-binaries/duckling-example-exe && \
+	pwd && \
+	ls && \
 	chmod +x duckling && \
 	chmod +x bp && \
 	chgrp -R 0 /projects/botpress && \
@@ -14,7 +16,6 @@ RUN apt update && \
 	apt install -y tzdata && \
 	ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
 	dpkg-reconfigure --frontend noninteractive tzdata && \
-	pwd && \
 	./bp extract
 
 
