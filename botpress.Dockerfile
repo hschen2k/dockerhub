@@ -14,6 +14,7 @@ RUN apt update && \
 	apt install -y tzdata && \
 	ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
 	dpkg-reconfigure --frontend noninteractive tzdata && \
+	pwd && \
 	./bp extract
 
 
